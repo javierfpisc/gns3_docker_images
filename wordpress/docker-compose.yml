@@ -1,0 +1,14 @@
+version: '3.5'
+services:
+#Services
+ apache_mysql:
+  build:
+    context: build
+    args:
+     ENVPATH: apache_mysql.env
+ apache:
+  build:
+    context: build
+    args:
+     ENVPATH: apache.env
+
