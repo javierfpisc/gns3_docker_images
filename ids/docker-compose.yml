@@ -6,4 +6,9 @@ services:
     context: build
     args:
      ENVPATH: snort.env
+ suricata:
+  build:
+    context: build
+    args:
+     ENVPATH: suricata.env
 
