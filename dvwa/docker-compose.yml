@@ -1,0 +1,10 @@
+version: '3.5'
+services:
+#Services
+ dvwa:
+  build:
+    context: build
+    args:
+     ENVPATH: dvwa.env
+
+
