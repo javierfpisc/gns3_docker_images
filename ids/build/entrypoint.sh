@@ -3,6 +3,9 @@
 #Cargamos iptables almacenadas
 [ -f /etc/iptables/rules.v4 ] && iptables-restore < /etc/iptables/rules.v4
 
+#Cargamos rutas si están definidas
+[ -f /etc/routes/routes.sh ] && sh /etc/routes/routes.sh
+
 #Arrancamos snort si existe el servicio
 if [ -f /etc/snort/snort.conf ]
 then
