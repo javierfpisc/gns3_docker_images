@@ -1,4 +1,4 @@
-FROM debian:bullseye
+FROM javierfpisc/brs_debian:bullseye_net
 
 ENV TERM xterm
 ENV PATH /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
