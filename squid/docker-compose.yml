@@ -1,0 +1,9 @@
+version: '3.5'
+services:
+#Services
+ squid:
+  build:
+    context: build
+    args:
+     ENVPATH: squid.env
+
