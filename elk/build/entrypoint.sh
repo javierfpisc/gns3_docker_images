@@ -7,7 +7,7 @@
 echo "nameserver 8.8.8.8" > /etc/resolv.conf
 
 #Lanza el proceso de arranque dentro de la imagen
-/usr/local/bin/start.sh
+/usr/local/bin/start.sh &
 
 #Uso exec para lanzar bash
 exec bash
