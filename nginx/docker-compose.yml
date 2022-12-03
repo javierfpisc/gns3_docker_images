@@ -6,5 +6,11 @@ services:
     context: build
     args:
      ENVPATH: nginx.env
+ nginx_modsec:
+  build:
+    context: build
+    dockerfile: Dockerfile_modsec
+    args:
+     ENVPATH: nginx_modsec.env
 
 
