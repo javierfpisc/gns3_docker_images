@@ -1,0 +1,13 @@
+version: '3.5'
+services:
+#Services
+ symfony:
+  build:
+    context: build
+    args:
+     ENVPATH: symfony.env
+  ports:
+  - "80:8000"
+  volumes:
+  - ./symfony_project:/symfony_project
+
