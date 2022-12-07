@@ -6,6 +6,10 @@ services:
     context: build
     args:
      ENVPATH: symfony.env
+  environment:
+  - SYMFONYV=^5.4
+  - PROJNAME=symfony_project
+  hostname: symfony
   ports:
   - "80:8000"
   volumes:
