@@ -1,5 +1,8 @@
 #!/bin/bash
+rm -f /$PROJNAME/.env
+rm -f /$PROJNAME/.gitignore
 
+[ -d /$PROJNAME/src ] || composer create-project symfony/skeleton:${SYMFONYV} $PROJNAME
 cd /$PROJNAME
 symfony server:start
 
