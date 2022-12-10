@@ -1,0 +1,19 @@
+version: '3.5'
+services:
+#Services
+ service:
+  build:
+    context: build
+    args:
+     ENVPATH: service.env
+  environment:
+   #Nombre del directorio donde reside docker-compose.yml para despliegue de los services
+   SERVICE: service
+  hostname: dcompose-service
+  cap_add:
+  - ALL
+  volumes:
+   - /var/run/docker.sock:/var/run/docker.sock:rw
+
+
+
