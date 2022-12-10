@@ -7,10 +7,12 @@ services:
     args:
      ENVPATH: graylog.env
   hostname: graylog
+  environment:
+   #Nombre del directorio donde reside docker-compose.yml para despliegue de los services
+   SERVICE: open-core
+   DOCKER_HOST: tcp://172.17.0.1:2375
   cap_add:
   - ALL
-  volumes:
-   - /var/run/docker.sock:/var/run/docker.sock
 
 
 

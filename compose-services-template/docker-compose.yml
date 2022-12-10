@@ -9,11 +9,10 @@ services:
   environment:
    #Nombre del directorio donde reside docker-compose.yml para despliegue de los services
    SERVICE: service
+   DOCKER_HOST: tcp://172.17.0.1:2375
   hostname: dcompose-service
   cap_add:
   - ALL
-  volumes:
-   - /var/run/docker.sock:/var/run/docker.sock
 
 
 

@@ -19,10 +19,10 @@ COPY entrypoint.sh /usr/bin/entrypoint.sh
 RUN chmod +x /usr/bin/entrypoint.sh
 
 #Copiamos el docker-compose de despliegue
-COPY docker-compose /graylog
+COPY docker-compose /docker-compose
 
 #Damos permiso al directorio
-RUN chmod -R +rx /graylog 
+RUN chmod -R +rx /docker-compose
 
 #Instalamos paquetes de utilidades del envfile
 RUN /bin/bash -c 'source /tmp/envfile; apt update; apt install -y $PACKS'
