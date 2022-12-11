@@ -6,5 +6,5 @@
 
 cd /docker-compose/${SERVICE} && docker-compose up -d
 
-exec bash -c "while true;do sleep 10;done"
+exec bash
 

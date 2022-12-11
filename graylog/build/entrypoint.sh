@@ -4,7 +4,9 @@
 [ -f /etc/routes/routes.sh ] && sh /etc/routes/routes.sh
 [ -f /etc/iptables/rules.v4 ] && iptables-restore < /etc/iptables/rules.v4
 
-cd /docker-compose/${SERVICE} && docker-compose up -d
+cd /docker-compose/${SERVICE}
 
-exec bash -c "while true;do sleep 10;done"
+docker-compose up -d
+
+exec bash
 
