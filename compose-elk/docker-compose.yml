@@ -1,0 +1,18 @@
+version: '3.5'
+services:
+#Services
+ elk:
+  build:
+    context: build
+    args:
+     ENVPATH: elk.env
+  hostname: elk
+  environment:
+   #Nombre del directorio donde reside docker-compose.yml para despliegue de los services
+   SERVICE: docker-elk
+   DOCKER_HOST: tcp://172.17.0.1:2375
+  cap_add:
+  - ALL
+
+
+
