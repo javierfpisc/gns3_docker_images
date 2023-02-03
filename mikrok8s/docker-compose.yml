@@ -1,0 +1,30 @@
+version: '3.5'
+services:
+#Services
+ nodo1:
+  build:
+    context: build
+    args:
+     ENVPATH: mikrok8s.env
+  environment:
+   DOCKER_HOST: tcp://172.17.0.1:2375
+  hostname: nodo1
+  cap_add:
+  - ALL
+  volumes:
+  - /sys/fs/cgroup:/sys/fs/cgroup:ro 
+ nodo2:
+  build:
+    context: build
+    args:
+     ENVPATH: mikrok8s.env
+  environment:
+   DOCKER_HOST: tcp://172.17.0.1:2375
+  hostname: nodo2
+  cap_add:
+  - ALL
+  volumes:
+  - /sys/fs/cgroup:/sys/fs/cgroup:ro
+
+
+
