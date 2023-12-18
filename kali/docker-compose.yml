@@ -1,0 +1,16 @@
+version: '3.5'
+services:
+#Services
+ kali:
+  build:
+    context: build
+    args:
+     ENVPATH: kali.env
+  environment:
+   - DISPLAY=${DISPLAY}
+  hostname: kali
+  cap_add:
+   - ALL
+  volumes:
+   - /tmp/.X11-unix:/tmp/.X11-unix
+  #network_mode: host
