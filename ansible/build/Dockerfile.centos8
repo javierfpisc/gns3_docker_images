@@ -1,0 +1,19 @@
+FROM centos:centos8
+
+ENV TERM xterm
+ENV PATH /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+LABEL distribucion="Centos8"
+LABEL maintainer=javierfp@iessanclemente.net
+
+#Copiamos el entrypoint.sh al container
+COPY entrypoint.sh /usr/bin/entrypoint.sh
+
+#Damos permiso al entrypoint
+RUN chmod +x /usr/bin/entrypoint.sh
+
+#Instalamos paquetes de utilidades del envfile
+RUN dnf update ; dnf install openssh-server
+
+#Comando para arrancar ssh y entrar en bucle de espera
+ENTRYPOINT ["/usr/bin/entrypoint.sh"]
