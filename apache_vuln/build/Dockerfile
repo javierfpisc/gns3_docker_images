@@ -1,13 +1,13 @@
-ARG BASE_IMAGE=${BASE_IMAGE:-"debian:bookworm"}
+ARG BASE_IMAGE=debian
+
 FROM ${BASE_IMAGE}
 
 ENV TERM=xterm
 ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
-LABEL distribucion=${BASE_IMAGE}
 LABEL maintainer=javierfp@iessanclemente.net
 
-#Copiar el script de instalación y lo ejecutamos
+#Copiar el script de instalación y lo
 COPY install.sh /usr/local/bin/install.sh
 RUN bash /usr/local/bin/install.sh
 

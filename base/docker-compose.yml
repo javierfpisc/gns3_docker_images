@@ -1,9 +1,10 @@
 services:
-#Services
- base:
-  build:
-    context: build
-    args:
-     BASE_IMAGE: debian:bookworm
-     VAR1: value1
-     VAR2: value2
+  base:
+    image: javierfpisc/base:latest
+    build:
+      context: build
+      args:
+        BASE_IMAGE: "debian:bookworm"
+    environment:
+      - VAR1=value1
+      - VAR2=value2

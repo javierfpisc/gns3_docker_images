@@ -1,9 +1,12 @@
 services:
 #Services
  apache_vuln:
+  image: javierfpisc/apache_vuln:2.4.49
   build:
     context: build
     args:
      BASE_IMAGE: debian:bookworm
-     APACHE_VERSION: 2.4.49
-     CVE_ID: CVE-2021-41773
+  environment:
+    - APACHE_VERSION=2.4.49
+    - CVE_ID=CVE-2021-41773
+    - IMAGE_NAME=javierfpisc/apache_vuln:latest

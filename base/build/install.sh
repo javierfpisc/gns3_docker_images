@@ -4,7 +4,7 @@
 VAR1=${VAR1:-"valor_por_defecto"}
 VAR2=${VAR2:-"valor_por_defecto"}
 
-echo "Instalando programas necesarios según requitios y variables definidas: $VAR1 $VAR2    "
+echo "Instalando programas necesarios según requitios y variables definidas: $VAR1 $VAR2"
 
 # Instalar dependencias necesarias
 apt update && apt install -y procps
