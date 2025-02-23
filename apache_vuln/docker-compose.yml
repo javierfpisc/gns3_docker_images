@@ -1,0 +1,9 @@
+services:
+#Services
+ apache_vuln:
+  build:
+    context: build
+    args:
+     BASE_IMAGE: debian:bookworm
+     APACHE_VERSION: 2.4.49
+     CVE_ID: CVE-2021-41773
