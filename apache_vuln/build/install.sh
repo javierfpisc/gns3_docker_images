@@ -7,7 +7,7 @@ CVE_ID=${CVE_ID:-"CVE-2021-41773"}          # Solo para referencia
 echo "Instalando Apache versión vulnerable: $APACHE_VERSION (según $CVE_ID)"
 
 # Instalar dependencias necesarias
-apt update && apt install -y wget procps curl build-essential libapr1-dev libaprutil1-dev libpcre3-dev
+apt update && apt install -y wget iputils-ping iproute2 procps curl build-essential libapr1-dev libaprutil1-dev libpcre3-dev
 
 # Descargar e instalar la versión específica de Apache
 cd /usr/local/src
