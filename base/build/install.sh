@@ -1,10 +1,9 @@
 #!/bin/bash
 
 # Parámetros desde variables de entorno
-VAR1=${VAR1:-"valor_por_defecto"}
-VAR2=${VAR2:-"valor_por_defecto"}
+VAR1=$1
 
-echo "Instalando programas necesarios según requitios y variables definidas: $VAR1 $VAR2"
+echo "Instalando programas necesarios según requitios y variables definidas: $VAR1"
 
 # Instalar dependencias necesarias
 apt update && apt install -y procps

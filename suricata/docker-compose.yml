@@ -1,0 +1,10 @@
+services:
+#Services
+ suricata_filebeat:
+  image: javierfpisc/suricata_filebeat:8.17.2
+  build:
+    context: build
+    args:
+      BASE_IMAGE: "debian:bookworm"
+      FILEBEAT_VERSION: "8.17.2"
+      ELK_SERVER: "192.168.120.200"

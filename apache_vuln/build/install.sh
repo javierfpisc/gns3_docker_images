@@ -1,10 +1,9 @@
 #!/bin/bash
 
 # Parámetros desde variables de entorno
-APACHE_VERSION=${APACHE_VERSION:-"2.4.49"}  # Versión por defecto vulnerable a CVE-2021-41773
-CVE_ID=${CVE_ID:-"CVE-2021-41773"}          # Solo para referencia
+APACHE_VERSION=$1 # Versión por defecto vulnerable a CVE-2021-41773
 
-echo "Instalando Apache versión vulnerable: $APACHE_VERSION (según $CVE_ID)"
+echo "Instalando Apache versión: $APACHE_VERSION"
 
 # Instalar dependencias necesarias
 apt update && apt install -y wget iputils-ping iproute2 procps curl build-essential libapr1-dev libaprutil1-dev libpcre3-dev

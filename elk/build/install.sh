@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # Parámetros desde variables de entorno
-ELK_VERSION=${ELK_VERSION:-"8.15.0"}  # Versión por defecto vulnerable a CVE-2021-41773
+ELK_VERSION=$1 # Versión
 
-echo "Instalando Apache versión vulnerable: $APACHE_VERSION (según $CVE_ID)"
+echo "Instalando ELK versión: $ELK_VERSION"
 
 # Instalar dependencias necesarias
 apt update && apt install -y wget vim iputils-ping iproute2 procps curl

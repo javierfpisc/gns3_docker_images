@@ -5,6 +5,4 @@ services:
       context: build
       args:
         BASE_IMAGE: "debian:bookworm"
-    environment:
-      - VAR1=value1
-      - VAR2=value2
+        VAR: "test"

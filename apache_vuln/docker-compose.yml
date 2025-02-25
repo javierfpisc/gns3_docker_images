@@ -6,6 +6,4 @@ services:
     context: build
     args:
      BASE_IMAGE: debian:bookworm
-  environment:
-    - APACHE_VERSION=2.4.49
-    - CVE_ID=CVE-2021-41773
+     APACHE_VERSION: 2.4.49

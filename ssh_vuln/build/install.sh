@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Parámetros desde variables de entorno
-SSH_VERSION=${SSH_VERSION:-"8.8p1"}  # Versión por defecto 
+SSH_VERSION=$1  # Versión de ssh 
 
 echo "Instalando SSH versión : $SSH_VERSION"
 

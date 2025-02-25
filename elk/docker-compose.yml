@@ -11,5 +11,4 @@ services:
     context: build
     args:
      BASE_IMAGE: sebp/elk:8.15.1
-  environment:
-    - ELK_VERSION=8.15.1
+     ELK_VERSION: 8.15.1

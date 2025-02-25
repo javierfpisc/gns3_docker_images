@@ -6,6 +6,5 @@ services:
     context: build
     args:
      BASE_IMAGE: debian:bookworm
-  environment:
-    - SSH_VERSION=8.8p1
+     SSH_VERSION: 8.8p1
 

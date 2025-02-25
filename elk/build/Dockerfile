@@ -2,6 +2,8 @@ ARG BASE_IMAGE=debian
 
 FROM ${BASE_IMAGE}
 
+ARG ELK_VERSION
+
 #FROM sebp/elk
 
 ENV TERM=xterm
@@ -11,7 +13,8 @@ LABEL maintainer=javierfp@iessanclemente.net
 
 #Copiar el script de instalación y lo
 COPY install.sh /usr/local/bin/install.sh
-RUN bash /usr/local/bin/install.sh
+RUN chmod +x /usr/local/bin/install.sh
+RUN /usr/local/bin/install.sh ${ELK_VERSION}
 
 #Copiamos el entrypoint.sh al container
 COPY entrypoint.sh /usr/bin/entrypoint.sh
