@@ -1,0 +1,10 @@
+services:
+  auditoria_web:
+    image: javierfpisc/auditoria_web:latest
+    build:
+      context: build
+      args:
+        BASE_IMAGE: "debian:bookworm"
+        FFUF_VERSION: "2.1.0"
+        HTTPPROBE_VERSION: "0.2"
+        OWASP_ZAP_VERSION: "2.16.0"
