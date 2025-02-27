@@ -3,7 +3,7 @@ FFUF_VERSION=$1
 HTTPPROBE_VERSION=$2
 OWASP_ZAP_VERSION=$3
 
-echo "Instalando programas necesarios de auditoría web"
+echo "Instalando programas necesarios de auditoría"
 
 # Instalar herramientas de sistema
 apt update && apt install -y vim curl iproute2 iputils-ping net-tools ifupdown dnsutils nano wget procps git unzip gpg
@@ -11,9 +11,9 @@ apt update && apt install -y vim curl iproute2 iputils-ping net-tools ifupdown d
 # Instalar dependencias
 apt install -y perl libnet-ssleay-perl openssl libauthen-pam-perl libio-pty-perl libmd-dev default-jre
 
-# 1. Instalar Nmap, nikto, OWASP ZAP, Dirb, SQLMap, Gobuster, Hydra, OpenVAS, Netcat
+# 1. Instalar Nmap, nikto, OWASP ZAP, Dirb, SQLMap, Gobuster, Hydra, OpenVAS, Netcat. ssh-audit
 echo "[*] Instalando Nmap y otras herramientas..."
-apt install -y nmap dirb sqlmap gobuster hydra netcat-openbsd
+apt install -y nmap dirb sqlmap gobuster hydra netcat-openbsd ssh-audit
 
 # 2. Instalar ffuf (descargar binario precompilado)
 echo "[*] Instalando ffuf..."
