@@ -2,7 +2,7 @@ ARG BASE_IMAGE=debian
 
 FROM ${BASE_IMAGE}
 
-ARG APACHE_VERSION
+#3ARG APACHE_VERSION
 
 ENV TERM=xterm
 ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
@@ -16,7 +16,8 @@ COPY vulnerable-site/vulnerable.conf /usr/local/apache2/conf/extra/vulnerable.co
 #Copiar el script de instalación y lo
 COPY install.sh /usr/local/bin/install.sh
 RUN chmod +x /usr/local/bin/install.sh
-RUN /usr/local/bin/install.sh ${APACHE_VERSION}
+#RUN /usr/local/bin/install.sh ${APACHE_VERSION}
+RUN /usr/local/bin/install.sh
 
 #Copiamos el entrypoint.sh al container
 COPY entrypoint.sh /usr/bin/entrypoint.sh
