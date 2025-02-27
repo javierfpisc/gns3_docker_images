@@ -2,7 +2,7 @@ ARG BASE_IMAGE=debian
 
 FROM ${BASE_IMAGE}
 
-#3ARG APACHE_VERSION
+#ARG APACHE_VERSION
 
 ENV TERM=xterm
 ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
