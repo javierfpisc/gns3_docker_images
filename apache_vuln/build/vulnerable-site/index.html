@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sitio Vulnerable - Blue Team Training</title>
+    <!-- SISTEMA VULNERABLE - NO USAR EN PRODUCCIÓN -->
+</head>
+<body>
+    <h1>Portal de Prácticas Blue Team</h1>
+    
+    <!-- Formulario vulnerable a inyección SQL ficticia -->
+    <div class="login">
+        <h3>Login de Administrador</h3>
+        <form action="/cgi-bin/auth.py" method="POST">
+            <input type="text" name="user" placeholder="Usuario">
+            <input type="password" name="pass" placeholder="Contraseña">
+            <input type="submit" value="Ingresar">
+        </form>
+    </div>
+
+    <!-- Campo vulnerable a XSS Reflejado -->
+    <div class="search">
+        <h3>Buscador</h3>
+        <form action="/cgi-bin/search.cgi" method="GET">
+            <input type="text" name="q" placeholder="Buscar...">
+            <input type="submit" value="Buscar">
+        </form>
+    </div>
+
+    <!-- Enlace vulnerable a Path Traversal -->
+    <div class="docs">
+        <h3>Documentos Internos</h3>
+        <a href="/cgi-bin/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/etc/passwd">Ver Configuración del Sistema</a>
+    </div>
+</body>
+</html>

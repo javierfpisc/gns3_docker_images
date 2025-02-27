@@ -9,6 +9,10 @@ ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
 LABEL maintainer=javierfp@iessanclemente.net
 
+#Copiar el website vulnerable
+COPY vulnerable-site/ /usr/local/apache2/htdocs/vulnerable-site/
+COPY vulnerable-site/vulnerable.conf /usr/local/apache2/conf/extra/vulnerable.conf
+
 #Copiar el script de instalación y lo
 COPY install.sh /usr/local/bin/install.sh
 RUN chmod +x /usr/local/bin/install.sh
