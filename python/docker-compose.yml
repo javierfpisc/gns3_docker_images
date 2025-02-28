@@ -1,11 +1,11 @@
 services:
 #Services
  python_attack:
-  image: javierfpisc/python_attack:bookworm
+  image: javierfpisc/python:3.13.2-slim-bookworm
   build:
     context: build
     args:
-     BASE_IMAGE: debian:bookworm
+     BASE_IMAGE: python:3.13.2-slim-bookworm
   # environment:
   #   - APACHE_VERSION=2.4.49
   #   - CVE_ID=CVE-2021-41773

@@ -6,6 +6,6 @@
 echo "Instalando Python 3"
 
 # Instalar dependencias necesarias
-apt update && apt install -y wget iputils-ping iproute2 procps curl python3 python3-pip
+apt update && apt install -y wget iputils-ping iproute2 procps curl
 
 echo "Python 3 instalado."
