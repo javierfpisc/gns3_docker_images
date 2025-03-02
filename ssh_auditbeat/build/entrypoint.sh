@@ -6,6 +6,7 @@
 # [ -f /etc/iptables/rules.v4 ] && iptables-restore < /etc/iptables/rules.v4
 
 /usr/sbin/sshd -D &
+service auditbeat start
 
 exec bash
 
