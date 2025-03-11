@@ -9,7 +9,7 @@
 
 # Instalar dependencias necesarias
 #apt update && apt install -y wget vim nano iputils-ping iproute2 procps curl build-essential libapr1-dev libaprutil1-dev libpcre3-dev && apt clean
-apt update && apt install -y wget vim nano iputils-ping iproute2 procps curl && apt clean
+apt update && apt install -y wget vim nano iputils-ping iproute2 procps curl python3 && apt clean
 
 #Configurar el sitio vulnerable
 chmod +x /usr/local/apache2/htdocs/vulnerable-site/cgi-bin/*
