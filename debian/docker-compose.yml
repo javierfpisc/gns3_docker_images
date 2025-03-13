@@ -11,3 +11,9 @@ services:
     context: 12_hardening
     args:
      BASE_IMAGE: debian:bookworm
+ bookworm_network:
+  image: javierfpisc/bookworm:network
+  build:
+    context: 12_network
+    args:
+     BASE_IMAGE: debian:bookworm
