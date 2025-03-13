@@ -1,10 +1,13 @@
-version: '3.5'
 services:
 #Services
- bullseye_net:
+#  bullseye_net:
+#   build:
+#     context: build
+#     args:
+#      ENVPATH: bullseye_net.env
+ bookworm_hardening:
+  image: javierfpisc/bookworm:hardening
   build:
-    context: build
+    context: 12_hardening
     args:
-     ENVPATH: bullseye_net.env
-
-
+     BASE_IMAGE: debian:bookworm
