@@ -2,6 +2,7 @@ version: '3.5'
 services:
 #Services
  dvwa:
+  image: javierfpisc/brs_dvwa
   build:
     context: build
     args:
