@@ -1,6 +1,7 @@
 services:
 #Services
  apache_mysql:
+  image: javierfpisc/brs_wordpress:apache_mysql
   build:
     context: build
     args:
