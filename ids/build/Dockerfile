@@ -1,9 +1,9 @@
-FROM javierfpisc/brs_debian:bullseye_net
+#FROM javierfpisc/brs_debian:bullseye_net
+FROM javierfpisc/bookworm:network
 
 ENV TERM xterm
 ENV PATH /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
-LABEL distribucion="Debian 11"
 LABEL maintainer=javierfp@iessanclemente.net
 
 #Argumento tomado del docker-compose.yml para seleccionar el archivo .env->envfile
