@@ -38,7 +38,7 @@ fi
 
 
 #Arrancamos filebeat si existe
-[ -f /etc/init.d/filebeat ] && /etc/init.d/filebeat start
+[ -f /etc/init.d/filebeat ] && chown root:root /etc/filebeat/filebeat.yml && /etc/init.d/filebeat start
 
 exec bash
 
