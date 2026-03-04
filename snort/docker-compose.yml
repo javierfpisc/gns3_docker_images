@@ -1,0 +1,13 @@
+services:
+#Services
+ snort:
+  image: javierfpisc/snort:3
+  build:
+    context: build
+    args:
+      BASE_IMAGE: "javierfpisc/trixie:network"
+      SNORT_REPO: "https://github.com/snort3/snort3.git"
+      DAQ_REPO: "https://github.com/snort3/libdaq.git"
+      SNORT_PREFIX: "/usr/local"
+  environment:
+    - SNORT_PREFIX=/usr/local

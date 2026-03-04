@@ -17,3 +17,9 @@ services:
     context: 12_network
     args:
      BASE_IMAGE: debian:bookworm
+ trixie_network:
+  image: javierfpisc/trixie:network
+  build:
+    context: 13_network
+    args:
+     BASE_IMAGE: debian:trixie
