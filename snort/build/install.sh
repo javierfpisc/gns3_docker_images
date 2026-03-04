@@ -15,10 +15,15 @@ echo "[1/7] Actualizando sistema e instalando dependencias..."
 apt update
 apt install -y --no-install-recommends \
   build-essential cmake pkg-config git autoconf automake libtool \
-  libpcap-dev libpcre2-dev libdumbnet-dev bison flex zlib1g-dev \
+  bison flex libfl-dev \
+  libpcap-dev libpcre2-dev libdumbnet-dev zlib1g-dev \
   liblzma-dev libssl-dev libluajit-5.1-dev libunwind-dev \
   libmnl-dev libnfnetlink-dev libnetfilter-queue-dev \
-  libhwloc-dev libhyperscan-dev ca-certificates libfl-dev
+  libhwloc-dev libhyperscan-dev \
+  libpcap0.8 libpcre2-8-0 libdumbnet1 zlib1g liblzma5 libssl3 libluajit-5.1-2 \
+  libunwind8 libmnl0 libnfnetlink0 libnetfilter-queue1 \
+  libhwloc15 libhyperscan5 numactl \
+  ca-certificates
 
 echo "[2/7] Preparando directorio de compilación..."
 mkdir -p "${BUILD_DIR}"
@@ -63,8 +68,37 @@ fi
 echo "[7/7] Verificando instalación..."
 "${SNORT_PREFIX}/bin/snort" -V
 
-echo
 echo "Instalación completada."
+
+echo "[8/8] Limpieza para reducir tamaño de imagen..."
+
+# Eliminar código fuente
+rm -rf "${BUILD_DIR}"
+
+# Strip binarios (reduce varios MB)
+if command -v strip >/dev/null 2>&1; then
+  strip "${SNORT_PREFIX}/bin/snort" || true
+fi
+
+# Eliminar dependencias de compilación
+apt purge -y \
+  build-essential cmake pkg-config git autoconf automake libtool \
+  bison flex libfl-dev
+
+# Eliminar librerías -dev (no necesarias en runtime)
+apt purge -y \
+  libpcap-dev libpcre2-dev libdumbnet-dev zlib1g-dev \
+  liblzma-dev libssl-dev libluajit-5.1-dev libunwind-dev \
+  libmnl-dev libnfnetlink-dev libnetfilter-queue-dev \
+  libhwloc-dev libhyperscan-dev
+
+# Autoremove de dependencias huérfanas
+apt autoremove -y
+
+# Limpiar cache de apt
+apt clean
+rm -rf /var/lib/apt/lists/*
+
 # echo "Prueba de config:"
 # echo "  ${SNORT_PREFIX}/bin/snort -c ${SNORT_PREFIX}/etc/snort/snort.lua -R ${SNORT_PREFIX}/etc/snort/rules/local.rules -T"
 # echo
