@@ -9,7 +9,8 @@ ELK_SERVER=$2      # Dirección IP del servidor ELK
 echo "Instalando Suricata con FILEBEAT: $FILEBEAT_VERSION"
 
 # Instalar dependencias necesarias
-apt update && DEBIAN_FRONTEND=noninteractive apt install -y wget vim iputils-ping iproute2 procps curl iptables suricata
+#apt update && DEBIAN_FRONTEND=noninteractive apt install -y wget vim iputils-ping iproute2 procps curl iptables suricata
+apt update && DEBIAN_FRONTEND=noninteractive apt install -y suricata
 
 # Instalar FILEBEAT
 cd /tmp && wget https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-${FILEBEAT_VERSION}-amd64.deb && apt install -y /tmp/filebeat-${FILEBEAT_VERSION}-amd64.deb
