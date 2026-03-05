@@ -1,11 +1,13 @@
-version: '3.5'
 services:
 #Services
  dvwa:
-  image: javierfpisc/brs_dvwa
+  image: javierfpisc/brs_dvwa:latest
   build:
     context: build
     args:
-     ENVPATH: dvwa.env
+      BASE_IMAGE: "javierfpisc/trixie:network"
+      DB: dvwa
+      DBUSER: dvwa
+      DBPASS: p@ssw0rd
 
 
