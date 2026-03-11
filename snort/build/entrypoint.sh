@@ -16,6 +16,9 @@ ifconfig br0 $IP netmask $MASK up
 #DNS
 echo "nameserver 8.8.8.8" > /etc/resolv.conf
 
+chown -R root:root /var/log/snort
+chmod -R 755 /var/log/snort
+
 ${SNORT_PREFIX}/bin/snort -D -c ${SNORT_PREFIX}/etc/snort/snort.lua -R ${SNORT_PREFIX}/etc/snort/rules/local.rules -i br0 -A alert_fast &
 
 exec bash
