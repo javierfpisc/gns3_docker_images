@@ -1,10 +1,5 @@
 #!/bin/bash
 
-#Si se han definido rutas e iptables se cargan
-# [ -f /etc/boot/boot.sh ] && sh /etc/boot/boot.sh
-[ -f /etc/routes/routes.sh ] && sh /etc/routes/routes.sh
-[ -f /etc/iptables/rules.v4 ] && iptables-restore < /etc/iptables/rules.v4
-
 #Creación del bridge que puentea eth0 y eth1 en br0
 brctl addbr br0
 brctl addif br0 eth0
@@ -15,6 +10,11 @@ ifconfig br0 up
 ifconfig br0 $IP netmask $MASK up
 #DNS
 echo "nameserver 8.8.8.8" > /etc/resolv.conf
+
+#Si se han definido rutas e iptables se cargan
+# [ -f /etc/boot/boot.sh ] && sh /etc/boot/boot.sh
+[ -f /etc/routes/routes.sh ] && sh /etc/routes/routes.sh
+[ -f /etc/iptables/rules.v4 ] && iptables-restore < /etc/iptables/rules.v4
 
 chown -R root:root /var/log/snort
 chmod -R 755 /var/log/snort
