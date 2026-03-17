@@ -16,11 +16,14 @@ iptables -I FORWARD -j NFQUEUE --queue-num 0
 #DNS
 echo "nameserver 8.8.8.8" > /etc/resolv.conf
 
+#Cambiamos permisos de los logs y filebeat para que puedan escribir
 chown -R root:root /var/log/suricata
 chmod -R 755 /var/log/suricata
+chown -R root:root /etc/filebeat
+chown -R root:root /var/lib/filebeat
+chown -R root:root /usr/share/filebeat
 
 #Arrancamos filebeat si existe
 [ -f /etc/init.d/filebeat ] && chown root:root /etc/filebeat/filebeat.yml && /etc/init.d/filebeat start
 
 exec bash
-
