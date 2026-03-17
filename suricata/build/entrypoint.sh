@@ -24,6 +24,6 @@ chown -R root:root /var/lib/filebeat
 chown -R root:root /usr/share/filebeat
 
 #Arrancamos filebeat si existe
-[ -f /etc/init.d/filebeat ] && chown root:root /etc/filebeat/filebeat.yml && /etc/init.d/filebeat start
+[ -f /etc/init.d/filebeat ] && /etc/init.d/filebeat start
 
 exec bash
